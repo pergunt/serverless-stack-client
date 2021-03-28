@@ -14,25 +14,21 @@ function App() {
   const [isAuthenticating, setIsAuthenticating] = useState(true);
   const history = useHistory();
   useEffect(() => {
+    async function onLoad() {
+      try {
+        await Auth.currentSession();
+        userHasAuthenticated(true);
+      }
+      catch(e) {
+        if (e !== 'No current user') {
+          onError(e);
+        }
+      }
+      setIsAuthenticating(false);
+    }
     onLoad();
   }, []);
 
-  async function onLoad() {
-    console.log('isAuthenticating', isAuthenticating)
-    try {
-      await Auth.currentSession();
-      userHasAuthenticated(true);
-    }
-    catch(e) {
-      if (e !== 'No current user') {
-        onError(e);
-      }
-    }
-
-    setIsAuthenticating(false);
-    console.log('isAuthenticating', false)
-
-  }
   async function handleLogout() {
     await Auth.signOut();
 

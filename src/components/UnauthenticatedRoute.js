@@ -3,12 +3,9 @@ import { Route, Redirect } from "react-router-dom";
 import { useAppContext } from "../libs/contextLib";
 
 function querystring(name, url = window.location.href) {
-  debugger
   name = name.replace(/[[]]/g, "\\$&");
-  debugger
   const regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)", "i");
   const results = regex.exec(url);
-  debugger
   if (!results) {
     return null;
   }
