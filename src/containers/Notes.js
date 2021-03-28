@@ -95,8 +95,8 @@ export default function Notes() {
       );
       history.push("/");
     } catch (e) {
-      onError(e);
       setIsLoading(false);
+      onError(e);
     }
   }
 

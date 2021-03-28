@@ -1,5 +1,6 @@
 const config = {
   MAX_ATTACHMENT_SIZE: 5000000,
+  STRIPE_KEY: "pk_test_51IZgu9AdMpHfe678T4UhCLCqBpzWRDAmaXSzfLyEk6VrXQla6Wsj40U1dApyh0YSQ2ezdyAaBoZsVNWsTroijU6G00AlP36XAG",
   s3: {
     REGION: "us-east-1",
     BUCKET: "notes-app-upload-ivan",
