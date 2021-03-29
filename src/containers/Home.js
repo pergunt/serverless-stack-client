@@ -13,7 +13,7 @@ import { API } from "aws-amplify";
 import { Link } from "react-router-dom";
 
 function loadNotes() {
-  return API.put("notes", "/notes");
+  return API.get("notes", "/notes");
 }
 
 function renderNotesList(notes) {
